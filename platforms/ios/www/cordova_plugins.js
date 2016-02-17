@@ -34,14 +34,6 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
-    },
-    {
-        "file": "plugins/com.dawsonloudon.videoplayer/www/VideoPlayer.js",
-        "id": "com.dawsonloudon.videoplayer.VideoPlayer",
-        "pluginId": "com.dawsonloudon.videoplayer",
-        "clobbers": [
-            "VideoPlayer"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -49,8 +41,7 @@ module.exports.metadata =
 {
     "cordova-plugin-device": "1.1.1",
     "cordova-plugin-app-event": "1.1.0",
-    "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "com.dawsonloudon.videoplayer": "1.0.0"
+    "de.appplant.cordova.plugin.local-notification": "0.8.4"
 }
 // BOTTOM OF METADATA
 });
