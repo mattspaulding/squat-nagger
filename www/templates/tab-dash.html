@@ -7,7 +7,7 @@
                     <ion-list>
                         <ion-item class="item-thumbnail-left" type="item-text-wrap">
                             <img src="../img/MarinYoga.jpg" />
-                             Keep it up. <br /> You're doing great!
+                            Keep it up. <br /> You're doing great!
                         </ion-item>
                         <p>In your session with {{nagger.name}} there are <b>{{nagger.nags.length}}</b> nags remaining and will end on {{endingDate.toDateString()}}</p>
                     </ion-list>
@@ -26,24 +26,24 @@
             </div>
         </div>
         <div ng-if="nagger==null">
-            <!--<div class="list card">
+            <video controls style="width:100%">
+                <source src="vid/Intro_x264.mp4" type="video/mp4" />
+            </video>
+            <div class="list card">
                 <div class="item item-divider">Welcome to Squat Nagger</div>
                 <div class="item item-body">
                     <ion-list>
-                        <ion-item>-->
-                            <video controls style="width:100%">
-                                <source ng-src="vid/Intro_x264.mp4" type="video/mp4" />
-                            </video>
-                        <!--</ion-item>
-                        <p>Squat Nagger will get your butt in shape.</p>
-                        <p>Choose a nagger to get started.</p>
-                        <button class="button button-block" ng-click="chooseNagger()">
-                            Choose Nagger
-                        </button>
-
+                        <ion-item>
+                            <p>Squat Nagger will get your butt in shape.</p>
+                            <p>Choose a nagger to get started.</p>
+                            <button class="button button-block" ng-click="chooseNagger()">
+                                Choose Nagger
+                            </button>
+                        </ion-item>
                     </ion-list>
                 </div>
             </div>
-        </div>-->
+        </div>
+
     </ion-content>
 </ion-view>
