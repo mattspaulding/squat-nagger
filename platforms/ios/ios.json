@@ -30,6 +30,9 @@
         },
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.mspaulding.squatnagger"
+        },
+        "com.dawsonloudon.videoplayer": {
+            "PACKAGE_NAME": "com.mspaulding.squatnagger"
         }
     },
     "dependent_plugins": {},
@@ -68,11 +71,20 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+        },
+        {
+            "file": "plugins/com.dawsonloudon.videoplayer/www/VideoPlayer.js",
+            "id": "com.dawsonloudon.videoplayer.VideoPlayer",
+            "pluginId": "com.dawsonloudon.videoplayer",
+            "clobbers": [
+                "VideoPlayer"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-device": "1.1.1",
         "cordova-plugin-app-event": "1.1.0",
-        "de.appplant.cordova.plugin.local-notification": "0.8.4"
+        "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "com.dawsonloudon.videoplayer": "1.0.0"
     }
 }

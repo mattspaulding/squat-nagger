@@ -12,7 +12,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 })
 
 .controller('NagsCtrl', function ($scope, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
-    $scope.nagger = Nags.getCurrentNagger();
+     $scope.nagger = Nags.getCurrentNagger();
     $scope.remove = function (nag) {
         Nags.remove(nag);
         $cordovaLocalNotification.clear(nag.id).then(function (result) {
