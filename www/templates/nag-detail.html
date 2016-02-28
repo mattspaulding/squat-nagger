@@ -103,7 +103,18 @@
                     </div>
                 </ion-item>
             </div>
-      <button class="button button-block button-positive" ng-if="nag.done!=null" ng-click="remove(nag)">
+            <div class="card" ng-show="nag.video=='toe-touch'">
+                <ion-item class="item-avatar" type="item-text-wrap">
+                    <img ng-src="img/MarinProfile.jpg" />
+                    How to do toe touch. <br /> Watch the video.
+                </ion-item>
+                <ion-item>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/sqnH72YOh6A?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </ion-item>
+            </div>
+   <button class="button button-block button-positive" ng-if="nag.done!=null" ng-click="remove(nag)">
                 {{nag.done}}
             </button>
             <button class="button button-block button-positive" ng-if="nag.done==null" ng-click="remove(nag)">

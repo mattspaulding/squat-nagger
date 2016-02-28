@@ -1,11 +1,11 @@
 angular.module('starter.services', ["ionic", "ngCordova"])
 
 .factory('Nags', function ($cordovaLocalNotification) {
-    // Might use a resource here that returns a JSON array
 
     var naggers = [
         {
             name: 'Sally Slumpbottom',
+            screenName: 'SallySlumpbottom',
             face: 'img/SallySlumpbottom.jpg',
             level: 'Easy',
             isUnlocked: true,
@@ -23,27 +23,27 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 day: 0,
                 hour: 0,
                 minute: 0
-            }, {
-                title: '5 lunges',
-                message: 'Let\'s start with some squats.',
-                video: 'lunges',
-                day: 0,
-                hour: 0,
-                minute: 0
-            }, {
-                title: '5 sumos',
-                message: 'Let\'s start with some squats.',
-                video: 'sumo-squats',
-                day: 0,
-                hour: 0,
-                minute: 0
-            }, {
-                title: '5 pulse',
-                message: 'Let\'s start with some squats.',
-                video: 'squat-pulses',
-                day: 0,
-                hour: 0,
-                minute: 0
+            //}, {
+            //    title: '5 lunges',
+            //    message: 'Let\'s start with some squats.',
+            //    video: 'lunges',
+            //    day: 0,
+            //    hour: 0,
+            //    minute: 0
+            //}, {
+            //    title: '5 sumos',
+            //    message: 'Let\'s start with some squats.',
+            //    video: 'sumo-squats',
+            //    day: 0,
+            //    hour: 0,
+            //    minute: 0
+            //}, {
+            //    title: '5 pulse',
+            //    message: 'Let\'s start with some squats.',
+            //    video: 'squat-pulses',
+            //    day: 0,
+            //    hour: 0,
+            //    minute: 0
             }, {
                 title: '5 Squats',
                 message: 'Let\'s start with some squats.',
@@ -61,45 +61,46 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 day: 990,
                 hour: 0,
                 minute: 0
-            }, {
-                title: '10 Squats',
-                message: 'Rise and shine sleepy head.',
-                video: 'squats',
-                day: 1,
-                hour: 9,
-                minute: 0
-            }, {
-                title: 'Touch your toes 20 sec.',
-                message: 'Oh boy. I\'m sore.',
-                video: 'toes',
-                day: 2,
-                hour: 8,
-                minute: 30
-            }, {
-                title: '8 Lunges',
-                message: 'I\'m missing Matlock for this.',
-                video: 'lunges',
-                day: 2,
-                hour: 19,
-                minute: 30
-            }, {
-                title: '20 sec Quad Stretch',
-                message: 'These legs haven\'t seen this much action in 3 decades.',
-                video: 'quad',
-                day: 3,
-                hour: 8,
-                minute: 26
-            }, {
-                title: '15 Curtsey Lunges',
-                message: 'These are the worst.',
-                video: 'curtsy-lunges',
-                day: 3,
-                hour: 17,
-                minute: 15
+            //}, {
+            //    title: '10 Squats',
+            //    message: 'Rise and shine sleepy head.',
+            //    video: 'squats',
+            //    day: 1,
+            //    hour: 9,
+            //    minute: 0
+            //}, {
+            //    title: 'Touch your toes 20 sec.',
+            //    message: 'Oh boy. I\'m sore.',
+            //    video: 'toes',
+            //    day: 2,
+            //    hour: 8,
+            //    minute: 30
+            //}, {
+            //    title: '8 Lunges',
+            //    message: 'I\'m missing Matlock for this.',
+            //    video: 'lunges',
+            //    day: 2,
+            //    hour: 19,
+            //    minute: 30
+            //}, {
+            //    title: '20 sec Quad Stretch',
+            //    message: 'These legs haven\'t seen this much action in 3 decades.',
+            //    video: 'quad',
+            //    day: 3,
+            //    hour: 8,
+            //    minute: 26
+            //}, {
+            //    title: '15 Curtsey Lunges',
+            //    message: 'These are the worst.',
+            //    video: 'curtsy-lunges',
+            //    day: 3,
+            //    hour: 17,
+            //    minute: 15
             }]
         },
         {
             name: 'Margery Moderation',
+            screenName: 'MargeryModeration',
             face: 'https://cdnil1.fiverrcdn.com/photos/2795414/original/1590.jpg?1393353812',
             level: 'Moderate',
             nags: [{
@@ -112,96 +113,137 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 title: '15 Squats',
                 message: 'Let\'s do some squats.',
                 day: 0,
-                hour: 16,
-                minute: 26
-            }, {
-                title: '20 Squats',
-                message: 'Let\'s burn it.',
-                day: 0,
-                hour: 16,
-                minute: 27
-            }]
-        },
-       {
-           name: 'Maddie Motheroftwo',
-           face: 'http://images.agoramedia.com/wte3.0/gcms/just-for-mom-article.jpg',
-           level: 'Moderate',
-           nags: [{
-               title: 'Hello',
-               message: 'Welcome to Squat Nagger!',
-               day: 0,
-               hour: 0,
-               minute: 0
-           }, {
-               title: '15 Squats',
-               message: 'Let\'s do some squats.',
-               day: 0,
-               hour: 16,
-               minute: 26
-           }, {
-               title: '20 Squats',
-               message: 'Let\'s burn it.',
-               day: 0,
-               hour: 16,
-               minute: 27
-           }]
-       },
-       {
-           name: 'Lily Likewhatever',
-           face: 'http://i5.walmartimages.com/dfw/dce07b8c-26ed/k2-_37fcad99-ab2f-4f3a-9001-5f463f78a69a.v2.jpg',
-           level: 'Hard',
-           nags: [{
-               title: 'Hello',
-               message: 'Welcome to Squat Nagger!',
-               day: 0,
-               hour: 0,
-               minute: 0
-           }, {
-               title: '15 Squats',
-               message: 'Let\'s do some squats.',
-               day: 0,
-               hour: 16,
-               minute: 26
-           }, {
-               title: '20 Squats',
-               message: 'Let\'s burn it.',
-               day: 0,
-               hour: 16,
-               minute: 27
-           }]
-       },
-        {
-            name: 'Bobbi & Bonnie Bunz',
-            face: 'https://cdnil1.fiverrcdn.com/photos/2044703/original/image.jpg?1449095649',
-            level: 'Advanced',
-            nags: [{
-                title: 'Hello',
-                message: 'Welcome to Squat Nagger!',
-                day: 0,
                 hour: 0,
                 minute: 0
             }, {
-                title: '15 Squats',
-                message: 'Let\'s do some squats.',
-                day: 0,
-                hour: 16,
-                minute: 26
-            }, {
                 title: '20 Squats',
                 message: 'Let\'s burn it.',
                 day: 0,
-                hour: 16,
-                minute: 27
+                hour: 0,
+                minute: 0
             }]
+       // },{
+       //    name: 'Maddie Motheroftwo',
+       //    face: 'http://images.agoramedia.com/wte3.0/gcms/just-for-mom-article.jpg',
+       //    level: 'Moderate',
+       //    nags: [{
+       //        title: 'Hello',
+       //        message: 'Welcome to Squat Nagger!',
+       //        day: 0,
+       //        hour: 0,
+       //        minute: 0
+       //    }, {
+       //        title: '15 Squats',
+       //        message: 'Let\'s do some squats.',
+       //        day: 0,
+       //        hour: 16,
+       //        minute: 26
+       //    }, {
+       //        title: '20 Squats',
+       //        message: 'Let\'s burn it.',
+       //        day: 0,
+       //        hour: 16,
+       //        minute: 27
+       //    }]
+       //},   {
+       //    name: 'Lily Likewhatever',
+       //    face: 'http://i5.walmartimages.com/dfw/dce07b8c-26ed/k2-_37fcad99-ab2f-4f3a-9001-5f463f78a69a.v2.jpg',
+       //    level: 'Hard',
+       //    nags: [{
+       //        title: 'Hello',
+       //        message: 'Welcome to Squat Nagger!',
+       //        day: 0,
+       //        hour: 0,
+       //        minute: 0
+       //    }, {
+       //        title: '15 Squats',
+       //        message: 'Let\'s do some squats.',
+       //        day: 0,
+       //        hour: 16,
+       //        minute: 26
+       //    }, {
+       //        title: '20 Squats',
+       //        message: 'Let\'s burn it.',
+       //        day: 0,
+       //        hour: 16,
+       //        minute: 27
+       //    }]
+       //},  {
+       //     name: 'Bobbi & Bonnie Bunz',
+       //     face: 'https://cdnil1.fiverrcdn.com/photos/2044703/original/image.jpg?1449095649',
+       //     level: 'Advanced',
+       //     nags: [{
+       //         title: 'Hello',
+       //         message: 'Welcome to Squat Nagger!',
+       //         day: 0,
+       //         hour: 0,
+       //         minute: 0
+       //     }, {
+       //         title: '15 Squats',
+       //         message: 'Let\'s do some squats.',
+       //         day: 0,
+       //         hour: 16,
+       //         minute: 26
+       //     }, {
+       //         title: '20 Squats',
+       //         message: 'Let\'s burn it.',
+       //         day: 0,
+       //         hour: 16,
+       //         minute: 27
+       //     }]
         }
     ];
+
+    var userInit = {
+        progress:
+            [{
+                screenName: 'SallySlumpbottom',
+                amount: 0,
+                isUnlocked:true
+            }, {
+                screenName: 'MargeryModeration',
+                amount: 0,
+                isUnlocked:false
+            }]
+    };
+
+
 
     return {
         //all: function () {
         //    return naggers[0].nags;
         //},
-        getAllNaggers: function () {
+        getUser: function () {
+            var savedUser = JSON.parse(window.localStorage.getItem("user"));
+            if (savedUser == null) {
+                window.localStorage.setItem("user", JSON.stringify(userInit));
+                return userInit;
+            }
+            return savedUser;
+        },
+        getAllNaggers: function (user) {
+            for (var i = 0; i < naggers.length; i++) {
+                for (var j = 0; j < user.progress.length; j++) {
+                    if (user.progress[j].screenName == naggers[i].screenName) {
+                        naggers[i].amount = user.progress[j].amount;
+                        naggers[i].isUnlocked = user.progress[j].isUnlocked;
+                    }
+                }
+            }
             return naggers;
+        },
+        completeNagger: function (screenName) {
+            debugger;
+            var user = JSON.parse(window.localStorage.getItem("user"));
+            for (var i = 0; i < user.progress.length; i++) {
+                if (user.progress[i].screenName == screenName) {
+                    user.progress[i].amount++;
+                    if (i < user.progress.length - 1) {
+                        user.progress[i + 1].isUnlocked = true;
+                    }
+                }
+            }
+            window.localStorage.setItem("user", JSON.stringify(user));
         },
         getNaggerByName: function (name) {
             for (var i = 0; i < naggers.length; i++) {
@@ -223,6 +265,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 currentNagger = null;
             }
             window.localStorage.setItem("currentNagger", JSON.stringify(currentNagger));
+            return currentNagger;
         },
         cancelCurrentNagger: function () {
             window.localStorage.setItem("currentNagger", null);

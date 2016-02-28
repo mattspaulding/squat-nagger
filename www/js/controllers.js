@@ -14,13 +14,16 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 .controller('NagsCtrl', function ($scope, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
     $scope.nagger = Nags.getCurrentNagger();
     $scope.remove = function (nag) {
-        Nags.remove(nag);
-        $cordovaLocalNotification.clear(nag.id).then(function (result) {
-            // ...
-        });
-        // cordova.plugins.notification.local.clear(nag.id);
+        if (nag.popup != null) {
+            Nags.popup(nag.popup);
+        }
+        var screenName = $scope.nagger.screenName;
+        $scope.nagger = Nags.remove(nag);
+        $cordovaLocalNotification.clear(nag.id);
         Nags.setBadgeNumber();
-        $scope.nagger = Nags.getCurrentNagger();
+        if ($scope.nagger == null) {
+            Nags.completeNagger(screenName);
+        }
     }
     $scope.detail = function (nagId) {
         $ionicHistory.nextViewOptions({
@@ -49,15 +52,16 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         if (nag.popup != null) {
             Nags.popup(nag.popup);
         }
-        Nags.remove(nag);
-        $cordovaLocalNotification.clear(nag.id).then(function (result) {
-            // ...
-        });
-        //cordova.plugins.notification.local.clear(nag.id);
+        var screenName = $scope.nagger.screenName;
+        $scope.nagger = Nags.remove(nag);
+        $cordovaLocalNotification.clear(nag.id);
         Nags.setBadgeNumber();
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
+        if ($scope.nagger == null) {
+            Nags.completeNagger(screenName);
+        }
         $state.go('tab.nags');
     }
     $scope.goBack = function () {
@@ -71,11 +75,9 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
 .controller('NaggersCtrl', ['$scope', '$rootScope', '$ionicPlatform', '$cordovaLocalNotification', '$ionicHistory', '$state', '$ionicPopup', 'Nags', function ($scope, $rootScope, $ionicPlatform, $cordovaLocalNotification, $ionicHistory, $state, $ionicPopup, Nags) {
     $ionicPlatform.ready(function () {
-        $scope.settings = {
-            enableFriends: true
-        };
-
-        $scope.naggers = Nags.getAllNaggers();
+        debugger;
+        $scope.user = Nags.getUser();
+        $scope.naggers = Nags.getAllNaggers($scope.user);
         $scope.nagger = Nags.getCurrentNagger();
 
         $scope.cancelNagger = function () {

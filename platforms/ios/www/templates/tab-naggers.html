@@ -31,7 +31,8 @@
                 <ion-item ng-if="nagger.isUnlocked" class="item-remove-animate item-avatar item-icon-right " type="item-text-wrap" ng-click="scheduleNagger(nagger.name)">
                     <img ng-src="{{nagger.face}}">
                     {{nagger.name}} <br /> ({{nagger.level}})
-                    <i class="icon ion-chevron-right icon-accessory"></i>
+                    <i ng-if="nagger.amount>0" class="icon ion-trophy icon-accessory"><span ng-if="nagger.amount>1" >{{nagger.amount}}</span></i>
+                    <i ng-if="nagger.amount==0" class="icon ion-chevron-right icon-accessory"></i>
                 </ion-item>
                 <ion-item ng-if="!nagger.isUnlocked" class="item-remove-animate item-avatar item-icon-right " type="item-text-wrap" ng-click="showLocked()">
                     <img ng-src="{{nagger.face}}">
