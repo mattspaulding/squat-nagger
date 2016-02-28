@@ -8,6 +8,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             name: 'Sally Slumpbottom',
             face: 'http://www.afamilyatwar.com/Index%20Photos/Margery%20Mason.jpg',
             level: 'Easy',
+            isUnlocked:true,
             caughtUpMessage0: 'Take a break.',
             caughtUpMessage1: 'I will nag you in a bit.',
             caughtUpMessage2: 'I have to change the litter box anyway.',

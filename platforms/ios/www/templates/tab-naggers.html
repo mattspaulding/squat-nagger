@@ -25,17 +25,24 @@
                     <ion-list>
                         <ion-item class="item-thumbnail-left" type="item-text-wrap">
                             <img ng-src="img/MarinProfile.jpg" />
-      Marin here again. <br /> Let's get started.
+                            Marin here again. <br /> Let's get started.
                         </ion-item>
                         <p>Choose a Squat Nagger from the list below.</p>
                     </ion-list>
                 </div>
             </div>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="nagger in naggers" type="item-text-wrap" ng-click="scheduleNagger(nagger.name)">
-                <img ng-src="{{nagger.face}}">
-                {{nagger.name}} <br /> ({{nagger.level}})
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </ion-item>
+            <div ng-repeat="nagger in naggers">
+                <ion-item ng-if="nagger.isUnlocked" class="item-remove-animate item-avatar item-icon-right " type="item-text-wrap" ng-click="scheduleNagger(nagger.name)">
+                    <img ng-src="{{nagger.face}}">
+                    {{nagger.name}} <br /> ({{nagger.level}})
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+                </ion-item>
+                <ion-item ng-if="!nagger.isUnlocked" class="item-remove-animate item-avatar item-icon-right " type="item-text-wrap" ng-click="showLocked()">
+                    <img ng-src="{{nagger.face}}">
+                    {{nagger.name}} <br /> ({{nagger.level}})
+                    <i class="icon ion-locked icon-accessory"></i>
+                </ion-item>
+            </div>
         </ion-list>
     </ion-content>
 </ion-view>

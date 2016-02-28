@@ -48,7 +48,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
     $scope.remove = function (nag) {
         if (nag.popup != null) {
             Nags.popup(nag.popup);
-         }
+        }
         Nags.remove(nag);
         $cordovaLocalNotification.clear(nag.id).then(function (result) {
             // ...
@@ -84,21 +84,25 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
             $scope.nagger = null;
         };
 
-        // A confirm dialog
         $scope.showConfirm = function () {
-            var confirmPopup = $ionicPopup.confirm({
+            $ionicPopup.confirm({
                 title: 'Cancel Nagger',
                 template: 'Are you sure you want to cancel this Nagger?',
                 cancelText: 'No',
                 okText: 'Yes'
-            });
-
-            confirmPopup.then(function (res) {
-                if (res) {
-                    $scope.cancelNagger();
-                } else {
-                    //do nothing
-                }
+            })
+                .then(function (res) {
+                    if (res) {
+                        $scope.cancelNagger();
+                    } else {
+                        //do nothing
+                    }
+                });
+        };
+        $scope.showLocked = function () {
+            $ionicPopup.alert({
+                title: '<i class="icon ion-locked icon-accessory"></i> Nagger Locked',
+                template: '<img width=100% ng-src="img/MarinProfile.jpg" /> This nagger is currently locked. Complete other naggers to unlock this nagger.'
             });
         };
 
