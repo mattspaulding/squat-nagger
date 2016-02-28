@@ -87,7 +87,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.showConfirm = function () {
             $ionicPopup.confirm({
                 title: 'Cancel Nagger',
-                template: 'Are you sure you want to cancel this Nagger?',
+                template: '<img width=100% ng-src="img/MarinProfile.jpg" /> Are you sure you want to cancel this Nagger?',
                 cancelText: 'No',
                 okText: 'Yes'
             })
