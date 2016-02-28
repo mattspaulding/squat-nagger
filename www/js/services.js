@@ -33,15 +33,15 @@ angular.module('starter.services',["ionic", "ngCordova"])
                 message: 'Let\'s start with some squats.',
                 video: 'squats',
                 day: 0,
-                hour: 22,
-                minute: 48
+                hour: 23,
+                minute: 02
             }, {
                 title: 'test2',
                 message: 'Let\'s start with some squats.',
                 video: 'squats',
                 day: 0,
-                hour: 22,
-                minute: 49
+                hour: 23,
+                minute: 03
             }, {
                 title: '10 Squats',
                 message: 'Rise and shine sleepy head.',
