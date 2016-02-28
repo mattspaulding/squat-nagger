@@ -89,6 +89,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.showConfirm = function () {
             $ionicPopup.confirm({
                 title: 'Cancel Nagger',
+                type:'button-royal',
                 template: '<img width=100% ng-src="img/MarinProfile.jpg" /> Are you sure you want to cancel this Nagger?',
                 cancelText: 'No',
                 okText: 'Yes'
@@ -104,6 +105,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.showLocked = function () {
             $ionicPopup.alert({
                 title: '<i class="icon ion-locked icon-accessory"></i> Nagger Locked',
+                type:'button-royal',
                 template: '<img width=100% ng-src="img/MarinProfile.jpg" /> This nagger is currently locked. Complete other naggers to unlock this nagger.'
             });
         };
