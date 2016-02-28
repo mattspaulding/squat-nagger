@@ -1,6 +1,6 @@
-angular.module('starter.services',["ionic", "ngCordova"])
+angular.module('starter.services', ["ionic", "ngCordova"])
 
-.factory('Nags', function ( $cordovaLocalNotification) {
+.factory('Nags', function ($cordovaLocalNotification) {
     // Might use a resource here that returns a JSON array
 
     var naggers = [
@@ -28,55 +28,42 @@ angular.module('starter.services',["ionic", "ngCordova"])
                 day: 0,
                 hour: 0,
                 minute: 0
-            }, {
-                title: 'test1',
-                message: 'Let\'s start with some squats.',
-                video: 'squats',
-                day: 0,
-                hour: 23,
-                minute: 02
-            }, {
-                title: 'test2',
-                message: 'Let\'s start with some squats.',
-                video: 'squats',
-                day: 0,
-                hour: 23,
-                minute: 03
-            //}            , {
-            //    title: '10 Squats',
-            //    message: 'Rise and shine sleepy head.',
-            //    video: 'squats',
-            //    day: 1,
-            //    hour: 9,
-            //    minute: 0
-            //}, {
-            //    title: 'Touch your toes 20 sec.',
-            //    message: 'Oh boy. I\'m sore.',
-            //    video: 'toes',
-            //    day: 2,
-            //    hour: 8,
-            //    minute: 30
-            //}, {
-            //    title: '8 Lunges',
-            //    message: 'I\'m missing Matlock for this.',
-            //    video: 'lunges',
-            //    day: 2,
-            //    hour: 19,
-            //    minute: 30
-            //}, {
-            //    title: '20 sec Quad Stretch',
-            //    message: 'These legs haven\'t seen this much action in 3 decades.',
-            //    video: 'quad',
-            //    day: 3,
-            //    hour: 8,
-            //    minute: 26
-            //}, {
-            //    title: '15 Curtsey Lunges',
-            //    message: 'These are the worst.',
-            //    video: 'curtsey-lunges',
-            //    day: 3,
-            //    hour: 17,
-            //    minute: 15
+
+                //}            , {
+                //    title: '10 Squats',
+                //    message: 'Rise and shine sleepy head.',
+                //    video: 'squats',
+                //    day: 1,
+                //    hour: 9,
+                //    minute: 0
+                //}, {
+                //    title: 'Touch your toes 20 sec.',
+                //    message: 'Oh boy. I\'m sore.',
+                //    video: 'toes',
+                //    day: 2,
+                //    hour: 8,
+                //    minute: 30
+                //}, {
+                //    title: '8 Lunges',
+                //    message: 'I\'m missing Matlock for this.',
+                //    video: 'lunges',
+                //    day: 2,
+                //    hour: 19,
+                //    minute: 30
+                //}, {
+                //    title: '20 sec Quad Stretch',
+                //    message: 'These legs haven\'t seen this much action in 3 decades.',
+                //    video: 'quad',
+                //    day: 3,
+                //    hour: 8,
+                //    minute: 26
+                //}, {
+                //    title: '15 Curtsey Lunges',
+                //    message: 'These are the worst.',
+                //    video: 'curtsey-lunges',
+                //    day: 3,
+                //    hour: 17,
+                //    minute: 15
             }]
         },
         {
@@ -248,17 +235,15 @@ angular.module('starter.services',["ionic", "ngCordova"])
                         count++;
                     }
                 });
+
+                $cordovaLocalNotification.update({
+                    id: nagger.nags[0].id,
+                    badge: count
+                }).then(function (result) {
+                    // ...
+                });
             }
-            $cordovaLocalNotification.update({
-                id: nagger.nags[0].id,
-                badge: count
-            }).then(function (result) {
-                // ...
-            });
-            //cordova.plugins.notification.local.update({
-            //    id: nagger.nags[0].id,
-            //    badge: count
-            //});
+           
         },
         get: function (nagId) {
             var currentNagger = JSON.parse(window.localStorage.getItem("currentNagger"));

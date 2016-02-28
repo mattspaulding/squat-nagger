@@ -12,13 +12,13 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 })
 
 .controller('NagsCtrl', function ($scope, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
-     $scope.nagger = Nags.getCurrentNagger();
+    $scope.nagger = Nags.getCurrentNagger();
     $scope.remove = function (nag) {
         Nags.remove(nag);
         $cordovaLocalNotification.clear(nag.id).then(function (result) {
             // ...
         });
-       // cordova.plugins.notification.local.clear(nag.id);
+        // cordova.plugins.notification.local.clear(nag.id);
         Nags.setBadgeNumber();
         $scope.nagger = Nags.getCurrentNagger();
     }
@@ -43,7 +43,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 })
 
 .controller('NagDetailCtrl', function ($scope, $stateParams, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
-     $scope.nagger = Nags.getCurrentNagger();
+    $scope.nagger = Nags.getCurrentNagger();
     $scope.nag = Nags.get($stateParams.nagId);
     $scope.remove = function (nag) {
         Nags.remove(nag);
@@ -66,7 +66,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
 })
 
-.controller('NaggersCtrl',['$scope', '$rootScope', '$ionicPlatform', '$cordovaLocalNotification', '$ionicHistory', '$state', '$ionicPopup','Nags', function ($scope,$rootScope, $ionicPlatform, $cordovaLocalNotification, $ionicHistory, $state, $ionicPopup,Nags ) {
+.controller('NaggersCtrl', ['$scope', '$rootScope', '$ionicPlatform', '$cordovaLocalNotification', '$ionicHistory', '$state', '$ionicPopup', 'Nags', function ($scope, $rootScope, $ionicPlatform, $cordovaLocalNotification, $ionicHistory, $state, $ionicPopup, Nags) {
     $ionicPlatform.ready(function () {
         $scope.settings = {
             enableFriends: true
@@ -118,16 +118,15 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
                     notification.text = nag.message;
                     notification.date = date;
                     notification.sound = 'file://sounds/cork-pop.wav';
-                    if (notification.date > new Date())
-                    {
+                    if (notification.date > new Date()) {
                         notifications.push(notification);
                     }
-          
+
                 });
 
                 $scope.nagger = Nags.setCurrentNaggerByName(naggerName);
                 $cordovaLocalNotification.schedule(notifications).then(function (result) {
-                    
+
                 });
                 $state.go('tab.nag-detail', { nagId: $scope.nagger.nags[0].id });
 
@@ -140,7 +139,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
             $rootScope.$on('$cordovaLocalNotification:trigger', function (event, notification, state) {
                 Nags.setBadgeNumber();
             });
-          
+
 
             $ionicHistory.nextViewOptions({
                 disableBack: true
