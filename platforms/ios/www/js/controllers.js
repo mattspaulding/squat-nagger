@@ -123,7 +123,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
                     notification.text = nag.message;
                     notification.date = date;
                     notification.sound = 'file://sounds/cork-pop.wav';
-                    if (notification.date > new Date())
+                    //if (notification.date > new Date())
                     {
                         notifications.push(notification);
                     }
