@@ -6,9 +6,9 @@ angular.module('starter.services', ["ionic", "ngCordova"])
     var naggers = [
         {
             name: 'Sally Slumpbottom',
-            face: 'http://www.afamilyatwar.com/Index%20Photos/Margery%20Mason.jpg',
+            face: 'img/SallySlumpbottom.jpg',
             level: 'Easy',
-            isUnlocked:true,
+            isUnlocked: true,
             caughtUpMessage0: 'Take a break.',
             caughtUpMessage1: 'I will nag you in a bit.',
             caughtUpMessage2: 'I have to change the litter box anyway.',
@@ -32,11 +32,11 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 hour: 0,
                 minute: 0
             }, {
-                popupId: 1,
                 title: 'Yo',
                 message: 'What up',
                 details: 'the details',
                 face: 'img/MarinProfile.jpg',
+                popupId: 1,
                 day: 990,
                 hour: 0,
                 minute: 0
