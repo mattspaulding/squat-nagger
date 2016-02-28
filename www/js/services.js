@@ -17,7 +17,8 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             nags: [{
                 title: 'Ho hum, I\'m Sally',
                 message: 'They told me I am your nagger.',
-                details: 'I really don\'t want to be doing this right now. And anyway I need to feed my cats. It is a long process. Let\'s just start off with a quick exercise then we\'ll pick back up tomorrow morning. Mmmk?',
+                details: 'I really don\'t want to be doing this right now. And anyway I need to feed my cats. (It is a long process.) Let\'s just start off with a quick exercise then we\'ll pick back up tomorrow morning. Mmmk?',
+                done: "Mmmk",
                 day: 0,
                 hour: 0,
                 minute: 0

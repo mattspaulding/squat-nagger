@@ -12,7 +12,7 @@
                 <p>{{nag.message}}</p>
             </ion-item>
             <ion-item ng-if="nag.details" class="item-text-wrap">
-                    <p>{{nag.details}}</p>
+                <p>{{nag.details}}</p>
             </ion-item>
             <div class="card" ng-show="nag.video=='squats'">
                 <ion-item class="item-avatar" type="item-text-wrap">
@@ -22,7 +22,7 @@
                 <ion-item>
                     <div class="video-container">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/WIn1RpFkhU8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-       </div>
+                    </div>
                 </ion-item>
             </div>
             <div class="card" ng-show="nag.video=='lunges'">
@@ -47,7 +47,10 @@
                     </div>
                 </ion-item>
             </div>
-     <button class="button button-block button-positive" ng-click="remove(nag)">
+            <button class="button button-block button-positive" ng-if="nag.done!=null" ng-click="remove(nag)">
+                {{nag.done}}
+            </button>
+            <button class="button button-block button-positive" ng-if="nag.done==null" ng-click="remove(nag)">
                 Done
             </button>
         </ion-list>
