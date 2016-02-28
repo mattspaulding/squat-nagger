@@ -29,6 +29,20 @@ angular.module('starter.services',["ionic", "ngCordova"])
                 hour: 0,
                 minute: 0
             }, {
+                title: 'test1',
+                message: 'Let\'s start with some squats.',
+                video: 'squats',
+                day: 0,
+                hour: 22,
+                minute: 48
+            }, {
+                title: 'test2',
+                message: 'Let\'s start with some squats.',
+                video: 'squats',
+                day: 0,
+                hour: 22,
+                minute: 49
+            }, {
                 title: '10 Squats',
                 message: 'Rise and shine sleepy head.',
                 video: 'squats',
