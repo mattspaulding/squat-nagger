@@ -8,14 +8,10 @@
         <div ng-if="nagger!=null" class="list card">
             <div class="item item-divider">{{nagger.name}} <br /> ({{nagger.level}})</div>
             <div class="item item-body">
-                <div>
-                    <ion-list>
-                        <img width="100%" ng-src="{{nagger.face}}">
-                        <button class="button button-block button-assertive" ng-click="showConfirm()">
-                            Cancel Nagger
-                        </button>
-                    </ion-list>
-                </div>
+                <img class="full-image" ng-src="{{nagger.face}}">
+                <button class="button button-block button-assertive" ng-click="showConfirm()">
+                    Cancel Nagger
+                </button>
             </div>
         </div>
         <ion-list ng-if="nagger==null">

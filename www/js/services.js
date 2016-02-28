@@ -24,6 +24,27 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 hour: 0,
                 minute: 0
             }, {
+                title: '5 lunges',
+                message: 'Let\'s start with some squats.',
+                video: 'lunges',
+                day: 0,
+                hour: 0,
+                minute: 0
+            }, {
+                title: '5 sumos',
+                message: 'Let\'s start with some squats.',
+                video: 'sumo-squats',
+                day: 0,
+                hour: 0,
+                minute: 0
+            }, {
+                title: '5 pulse',
+                message: 'Let\'s start with some squats.',
+                video: 'squat-pulses',
+                day: 0,
+                hour: 0,
+                minute: 0
+            }, {
                 title: '5 Squats',
                 message: 'Let\'s start with some squats.',
                 video: 'squats',
@@ -71,7 +92,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             }, {
                 title: '15 Curtsey Lunges',
                 message: 'These are the worst.',
-                video: 'curtsey-lunges',
+                video: 'curtsy-lunges',
                 day: 3,
                 hour: 17,
                 minute: 15
