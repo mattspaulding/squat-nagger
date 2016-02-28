@@ -104,6 +104,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.scheduleNagger = function (naggerName) {
             //window.plugin.notification.local.cancelAll(function () {
             $cordovaLocalNotification.cancelAll().then(function (result) {
+                alert('cancelall');
                 $scope.nagger = Nags.setCurrentNaggerByName(naggerName);
                 var notifications = [];
                 $scope.nagger.nags.forEach(function (nag, index) {
