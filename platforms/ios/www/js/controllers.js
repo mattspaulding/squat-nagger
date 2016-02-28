@@ -127,7 +127,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
                 $scope.nagger = Nags.setCurrentNaggerByName(naggerName);
                 $cordovaLocalNotification.schedule(notifications).then(function (result) {
-                    Nags.setBadgeNumber();
+                    
                 });
                 $state.go('tab.nag-detail', { nagId: $scope.nagger.nags[0].id });
 
@@ -136,20 +136,11 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
             $rootScope.$on('$cordovaLocalNotification:click', function (event, notification, state) {
                 $state.go('tab.nag-detail', { nagId: notification.id });
             });
-            //cordova.plugins.notification.local.on("click", function (notification) {
-            //    $state.go('tab.nag-detail', { nagId: notification.id });
-            //});
 
             $rootScope.$on('$cordovaLocalNotification:trigger', function (event, notification, state) {
                 Nags.setBadgeNumber();
             });
-            //cordova.plugins.notification.local.on("trigger", function (notification) {
-            //    Nags.setBadgeNumber();
-            //});
-
-            //    $rootScope.$on('$cordovaLocalNotification:schedule',function (event, notification, state) {
-            //        $cordovaLocalNotification.clearAll();
-            //});
+          
 
             $ionicHistory.nextViewOptions({
                 disableBack: true
