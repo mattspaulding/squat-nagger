@@ -26,10 +26,12 @@
             </div>
         </div>
         <div ng-if="nagger==null">
-             <div class="video-container">
-                 <iframe width="560" height="315" src="https://www.youtube.com/embed/E_u4HNGzLx0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-           
+            <div class="video-container">
+                <div onclick="thevid = document.getElementById('thevideo'); thevid.style.display = 'block'; this.style.display = 'none'; thevid.src += '&autoplay=1'; ev.preventDefault();">
+                    <img src="img/MarinProfile.jpg" style="cursor:pointer" />
+                </div>
+                         <iframe id="thevideo" style="display:none" width="560" height="315" src="https://www.youtube.com/embed/E_u4HNGzLx0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+               </div>
             <div class="list card">
                 <div class="item item-divider">Welcome to Squat Nagger</div>
                 <div class="item item-body">
