@@ -68,7 +68,6 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
 .controller('NaggersCtrl',['$scope', '$rootScope', '$ionicPlatform', '$cordovaLocalNotification', '$ionicHistory', '$state', '$ionicPopup','Nags', function ($scope,$rootScope, $ionicPlatform, $cordovaLocalNotification, $ionicHistory, $state, $ionicPopup,Nags ) {
     $ionicPlatform.ready(function () {
-        alert('ionic ready');
         $scope.settings = {
             enableFriends: true
         };
@@ -101,11 +100,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         };
 
         $scope.scheduleNagger = function (naggerName) {
-            //window.plugin.notification.local.cancelAll(function () {
-            alert('beforecancelall');
             $cordovaLocalNotification.cancelAll().then(function (result) {
-                alert('cancelall');
-                debugger;
                 $scope.nagger = Nags.setCurrentNaggerByName(naggerName);
                 var notifications = [];
                 $scope.nagger.nags.forEach(function (nag, index) {
@@ -123,7 +118,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
                     notification.text = nag.message;
                     notification.date = date;
                     notification.sound = 'file://sounds/cork-pop.wav';
-                    //if (notification.date > new Date())
+                    if (notification.date > new Date())
                     {
                         notifications.push(notification);
                     }
