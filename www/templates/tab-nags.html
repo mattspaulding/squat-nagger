@@ -1,7 +1,7 @@
 <ion-view view-title="Nags">
     <ion-content>
         <!--<div>{{nagger}}</div>-->
-         <div ng-if="isShowCaughtUp()">
+        <div ng-if="isShowCaughtUp()">
             <div class="list card">
                 <div class="item item-divider">All caught up!</div>
                 <div class="item item-body">
@@ -11,7 +11,7 @@
                             {{nagger.caughtUpMessage0}}<br />
                             {{nagger.caughtUpMessage1}}<br />
                             {{nagger.caughtUpMessage2}}
-          </ion-item>
+                        </ion-item>
                     </ion-list>
                 </div>
             </div>
@@ -44,7 +44,8 @@
         </div>
         <ion-list>
             <ion-item class="item-avatar item-icon-right" ng-repeat="nag in nagger.nags" type="item-text-wrap" ng-click="detail(nag.id)" ng-if="isShowNag(nag.date)">
-                <img ng-src="{{nagger.face}}">
+                <img ng-if="nag.face" ng-src="{{nag.face}}">
+                <img ng-if="!nag.face" ng-src="{{nagger.face}}">
                 <h2>{{nag.title}}</h2>
                 <p>{{nag.message}}</p>
                 <i class="icon ion-chevron-right icon-accessory"></i>

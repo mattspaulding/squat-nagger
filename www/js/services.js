@@ -26,45 +26,54 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 title: '5 Squats',
                 message: 'Let\'s start with some squats.',
                 video: 'squats',
+                popup: 1,
                 day: 0,
                 hour: 0,
                 minute: 0
-
-                //}            , {
-                //    title: '10 Squats',
-                //    message: 'Rise and shine sleepy head.',
-                //    video: 'squats',
-                //    day: 1,
-                //    hour: 9,
-                //    minute: 0
-                //}, {
-                //    title: 'Touch your toes 20 sec.',
-                //    message: 'Oh boy. I\'m sore.',
-                //    video: 'toes',
-                //    day: 2,
-                //    hour: 8,
-                //    minute: 30
-                //}, {
-                //    title: '8 Lunges',
-                //    message: 'I\'m missing Matlock for this.',
-                //    video: 'lunges',
-                //    day: 2,
-                //    hour: 19,
-                //    minute: 30
-                //}, {
-                //    title: '20 sec Quad Stretch',
-                //    message: 'These legs haven\'t seen this much action in 3 decades.',
-                //    video: 'quad',
-                //    day: 3,
-                //    hour: 8,
-                //    minute: 26
-                //}, {
-                //    title: '15 Curtsey Lunges',
-                //    message: 'These are the worst.',
-                //    video: 'curtsey-lunges',
-                //    day: 3,
-                //    hour: 17,
-                //    minute: 15
+            }, {
+                popupId: 1,
+                title: 'Yo',
+                message: 'What up',
+                details: 'the details',
+                face: 'img/MarinProfile.jpg',
+                day: 990,
+                hour: 0,
+                minute: 0
+            }, {
+                title: '10 Squats',
+                message: 'Rise and shine sleepy head.',
+                video: 'squats',
+                day: 1,
+                hour: 9,
+                minute: 0
+            }, {
+                title: 'Touch your toes 20 sec.',
+                message: 'Oh boy. I\'m sore.',
+                video: 'toes',
+                day: 2,
+                hour: 8,
+                minute: 30
+            }, {
+                title: '8 Lunges',
+                message: 'I\'m missing Matlock for this.',
+                video: 'lunges',
+                day: 2,
+                hour: 19,
+                minute: 30
+            }, {
+                title: '20 sec Quad Stretch',
+                message: 'These legs haven\'t seen this much action in 3 decades.',
+                video: 'quad',
+                day: 3,
+                hour: 8,
+                minute: 26
+            }, {
+                title: '15 Curtsey Lunges',
+                message: 'These are the worst.',
+                video: 'curtsey-lunges',
+                day: 3,
+                hour: 17,
+                minute: 15
             }]
         },
         {
@@ -191,8 +200,6 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             if (currentNagger.nags.length == 0) {
                 currentNagger = null;
             }
-
-            // currentNagger.nags.splice(currentNagger.nags.indexOf(nag), 1);
             window.localStorage.setItem("currentNagger", JSON.stringify(currentNagger));
         },
         cancelCurrentNagger: function () {
@@ -244,7 +251,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                     // ...
                 });
             }
-           
+
         },
         get: function (nagId) {
             var currentNagger = JSON.parse(window.localStorage.getItem("currentNagger"));
@@ -254,6 +261,15 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 }
             }
             return null;
+        },
+        popup: function (popup) {
+            var currentNagger = JSON.parse(window.localStorage.getItem("currentNagger"));
+            for (var i = 0; i < currentNagger.nags.length; i++) {
+                if (currentNagger.nags[i].popupId === parseInt(popup)) {
+                    currentNagger.nags[i].date = new Date();
+                }
+            }
+            window.localStorage.setItem("currentNagger", JSON.stringify(currentNagger));
         }
     };
 });

@@ -46,6 +46,9 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
     $scope.nagger = Nags.getCurrentNagger();
     $scope.nag = Nags.get($stateParams.nagId);
     $scope.remove = function (nag) {
+        if (nag.popup != null) {
+            Nags.popup(nag.popup);
+         }
         Nags.remove(nag);
         $cordovaLocalNotification.clear(nag.id).then(function (result) {
             // ...
