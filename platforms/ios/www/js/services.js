@@ -99,7 +99,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             getToWorkMessage2: 'You can do it!',
             nags: [{
                 title: 'Welcome, my name is Callie',
-                message: 'I am going to be your nagger for this track.',
+                message: 'I am going to be your nagger.',
                 details: 'I have to take the kids to soccer practice in a bit, but I have a few minutes to get you started with some exercises. How does that sound?',
                 done: "Good",
                 day: 0,
@@ -125,7 +125,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 title: 'Alrighty',
                 message: 'Day 1 done.',
                 details: 'I have to scadootle. There is no rest for Soccer Mom. We\'ll get back to it tomorrow right after I drop off the kids at school.',
-                face: 'img/MarinProfile.jpg',
+                face: 'img/CallieCaboose.jpg',
                 done: "See you then",
                 popupId: 1,
                 popup: 2,
