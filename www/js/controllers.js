@@ -3,7 +3,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 .controller('DashCtrl', function ($scope, Nags, $state) {
     $scope.nagger = Nags.getCurrentNagger();
     if ($scope.nagger != null) {
-        $scope.endingDate = new Date($scope.nagger.nags[$scope.nagger.nags.length - 1].date);
+        $scope.endingDate = new Date($scope.nagger.nags[$scope.nagger.nags.length - 2].date);
     }
 
     $scope.chooseNagger = function () {
@@ -75,7 +75,6 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
 .controller('NaggersCtrl', ['$scope', '$rootScope', '$ionicPlatform', '$cordovaLocalNotification', '$ionicHistory', '$state', '$ionicPopup', 'Nags', function ($scope, $rootScope, $ionicPlatform, $cordovaLocalNotification, $ionicHistory, $state, $ionicPopup, Nags) {
     $ionicPlatform.ready(function () {
-        debugger;
         $scope.user = Nags.getUser();
         $scope.naggers = Nags.getAllNaggers($scope.user);
         $scope.nagger = Nags.getCurrentNagger();
@@ -89,7 +88,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.showConfirm = function () {
             $ionicPopup.confirm({
                 title: 'Cancel Nagger',
-                type:'button-royal',
+                type: 'button-royal',
                 template: '<img width=100% ng-src="img/MarinProfile.jpg" /> Are you sure you want to cancel this Nagger?',
                 cancelText: 'No',
                 okText: 'Yes'
@@ -105,7 +104,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $scope.showLocked = function () {
             $ionicPopup.alert({
                 title: '<i class="icon ion-locked icon-accessory"></i> Nagger Locked',
-                type:'button-royal',
+                type: 'button-royal',
                 template: '<img width=100% ng-src="img/MarinProfile.jpg" /> This nagger is currently locked. Complete other naggers to unlock this nagger.'
             });
         };
@@ -123,16 +122,17 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
                     $scope.nagger.nags[index].date = date;
                     var guid = index;//Math.floor((Math.random() * 999999999999999) + 1);
                     $scope.nagger.nags[index].id = guid;
-                    var notification = {};
-                    notification.id = guid;
-                    notification.title = nag.title;
-                    notification.text = nag.message;
-                    notification.date = date;
-                    notification.sound = 'file://sounds/cork-pop.wav';
-                    if (notification.date > new Date()) {
-                        notifications.push(notification);
+                    if (nag.popupId == null) {
+                        var notification = {};
+                        notification.id = guid;
+                        notification.title = nag.title;
+                        notification.text = nag.message;
+                        notification.date = date;
+                        notification.sound = 'file://sounds/cork-pop.wav';
+                        if (notification.date > new Date()) {
+                            notifications.push(notification);
+                        }
                     }
-
                 });
 
                 $scope.nagger = Nags.setCurrentNaggerByName(naggerName);
