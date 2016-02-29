@@ -93,10 +93,10 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             level: 'Moderate',
             caughtUpMessage0: 'Take a break.',
             caughtUpMessage1: 'I will nag you in a bit.',
-            caughtUpMessage2: 'I have to change the litter box anyway.',
+            caughtUpMessage2: 'I have to make snacks for the kids.',
             getToWorkMessage0: 'Get to work.',
-            getToWorkMessage1: 'Or don\'t.',
-            getToWorkMessage2: 'Whatever.',
+            getToWorkMessage1: '',
+            getToWorkMessage2: 'You can do it!',
             nags: [{
                 title: 'Welcome, my name is Callie',
                 message: 'I am going to be your nagger for this track.',
@@ -116,7 +116,6 @@ angular.module('starter.services', ["ionic", "ngCordova"])
             }, {
                 title: '15 Lunges',
                 message: 'And then some lunges.',
-                details: 'So how this works is I tell you what to do and Marin shows you how to do it. Got it? Great.',
                 video: 'lunges',
                 popup: 1,
                 day: 0,
@@ -189,7 +188,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 title: '15 Squat Jumps',
                 message: 'End it with a bang.',
                 video: 'squat-jumps',
-                popup: 2,
+                popup: 3,
                 day: 3,
                 hour: 17,
                 minute: 15
@@ -198,7 +197,7 @@ angular.module('starter.services', ["ionic", "ngCordova"])
                 message: 'You did it!',
                 details: 'You made it through the Callie Caboose track. Try the Tina Tush track next.',
                 face: 'img/Trophy.jpg',
-                popupId: 2,
+                popupId: 3,
                 day: 990,
                 hour: 0,
                 minute: 0
