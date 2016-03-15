@@ -41,7 +41,8 @@ module.exports.metadata =
 {
     "cordova-plugin-device": "1.1.1",
     "cordova-plugin-app-event": "1.1.0",
-    "de.appplant.cordova.plugin.local-notification": "0.8.4"
+    "de.appplant.cordova.plugin.local-notification": "0.8.4",
+    "cordova-plugin-whitelist": "1.2.2-dev"
 }
 // BOTTOM OF METADATA
 });
