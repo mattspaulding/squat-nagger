@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.mspaulding.squatnagger"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.mspaulding.squatnagger"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.mspaulding.squatnagger"
+        }
+    },
+    "dependent_plugins": {}
+}
