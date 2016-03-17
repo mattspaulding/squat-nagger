@@ -9,6 +9,9 @@
     "installed_plugins": {
         "de.appplant.cordova.plugin.local-notification": {
             "PACKAGE_NAME": "com.mspaulding.squatnagger"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.mspaulding.squatnagger"
         }
     },
     "dependent_plugins": {
