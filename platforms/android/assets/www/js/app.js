@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     .config(function ($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
-    });
+    })
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
