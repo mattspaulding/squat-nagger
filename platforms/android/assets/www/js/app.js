@@ -23,6 +23,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     });
 })
 
+    .config(function($sceDelegateProvider) {
+        $sceDelegateProvider.resourceUrlWhitelist([
+          // Allow same origin resource loads.
+          'self',
+          // Allow loading from our assets domain.  Notice the difference between * and **.
+          'http://youtu.be/**']);
+
+
+    })
+
 .config(function ($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
