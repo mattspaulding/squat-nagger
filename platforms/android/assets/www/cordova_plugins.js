@@ -34,12 +34,6 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-whitelist/whitelist.js",
-        "id": "cordova-plugin-whitelist.whitelist",
-        "pluginId": "cordova-plugin-whitelist",
-        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -47,8 +41,7 @@ module.exports.metadata =
 {
     "cordova-plugin-app-event": "1.1.0",
     "cordova-plugin-device": "1.1.1",
-    "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "cordova-plugin-whitelist": "1.2.1"
+    "de.appplant.cordova.plugin.local-notification": "0.8.4"
 }
 // BOTTOM OF METADATA
 });

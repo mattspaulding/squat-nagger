@@ -4,18 +4,7 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {
-            "res/xml/config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            }
-        }
+        "files": {}
     },
     "installed_plugins": {
         "cordova-plugin-app-event": {
@@ -25,9 +14,6 @@
             "PACKAGE_NAME": "com.mspaulding.squatnagger"
         },
         "de.appplant.cordova.plugin.local-notification": {
-            "PACKAGE_NAME": "com.mspaulding.squatnagger"
-        },
-        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.mspaulding.squatnagger"
         }
     },
