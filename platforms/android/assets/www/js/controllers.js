@@ -10,7 +10,6 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $state.go('tab.naggers');
     }
 
-    $scope.theBestVideo = 'E_u4HNGzLx0';
     $scope.playerVars = {
         rel: 0,
         showinfo: 0,
@@ -76,6 +75,12 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
             disableBack: true
         });
         $state.go('tab.nags');
+    }
+
+    $scope.playerVars = {
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 0,
     }
 
 })
