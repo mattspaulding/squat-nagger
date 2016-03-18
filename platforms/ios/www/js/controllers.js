@@ -9,6 +9,13 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
     $scope.chooseNagger = function () {
         $state.go('tab.naggers');
     }
+
+    $scope.theBestVideo = 'E_u4HNGzLx0';
+    $scope.playerVars = {
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 0,
+    }
 })
 
 .controller('NagsCtrl', function ($scope, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
