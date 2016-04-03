@@ -5,30 +5,28 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'ionic.service.core', 'ionic.service.analytics', 'starter.controllers', 'starter.services'])
 
 
-  .config(function ($sceDelegateProvider) {
-    $sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?youtube\.com/.+$')]);
-  })
-.run(function ($ionicPlatform) {
+  .run(function ($ionicPlatform, $ionicAnalytics) {
     $ionicPlatform.ready(function () {
-        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-        // for form inputs)
-        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            cordova.plugins.Keyboard.disableScroll(true);
 
-        }
-        if (window.StatusBar) {
-            // org.apache.cordova.statusbar required
-            StatusBar.styleDefault();
-        }
+      $ionicAnalytics.register();
+
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleLightContent();
+      }
     });
-})
+  })
 
 
-.config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
     // Learn more here: https://github.com/angular-ui/ui-router
@@ -38,57 +36,57 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     // setup an abstract state for the tabs directive
       .state('tab', {
-          url: '/tab',
-          abstract: true,
-          templateUrl: 'templates/tabs.html'
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html'
       })
 
-    // Each tab has its own nav history stack:
+      // Each tab has its own nav history stack:
 
-    .state('tab.dash', {
+      .state('tab.dash', {
         cache: false,
         url: '/dash',
         views: {
-            'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
-            }
+          'tab-dash': {
+            templateUrl: 'templates/tab-dash.html',
+            controller: 'DashCtrl'
+          }
         }
-    })
+      })
 
-    .state('tab.nags', {
+      .state('tab.nags', {
         cache: false,
         url: '/nags',
         views: {
-            'tab-nags': {
-                templateUrl: 'templates/tab-nags.html',
-                controller: 'NagsCtrl'
-            }
-        }
-    })
-      .state('tab.nag-detail', {
-          cache: false,
-          url: '/nags/:nagId',
-          views: {
-              'tab-nags': {
-                  templateUrl: 'templates/nag-detail.html',
-                  controller: 'NagDetailCtrl'
-              }
+          'tab-nags': {
+            templateUrl: 'templates/tab-nags.html',
+            controller: 'NagsCtrl'
           }
+        }
+      })
+      .state('tab.nag-detail', {
+        cache: false,
+        url: '/nags/:nagId',
+        views: {
+          'tab-nags': {
+            templateUrl: 'templates/nag-detail.html',
+            controller: 'NagDetailCtrl'
+          }
+        }
       })
 
-    .state('tab.naggers', {
+      .state('tab.naggers', {
         cache: false,
         url: '/naggers',
         views: {
-            'tab-naggers': {
-                templateUrl: 'templates/tab-naggers.html',
-                controller: 'NaggersCtrl'
-            }
+          'tab-naggers': {
+            templateUrl: 'templates/tab-naggers.html',
+            controller: 'NaggersCtrl'
+          }
         }
-    });
+      });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/dash');
 
-});
+  });
