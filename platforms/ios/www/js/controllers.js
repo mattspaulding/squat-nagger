@@ -8,7 +8,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
 
     $scope.chooseNagger = function () {
         $state.go('tab.naggers');
-    }
+    };
 
     $scope.playerVars = {
         rel: 0,
@@ -30,21 +30,21 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         if ($scope.nagger == null) {
             Nags.completeNagger(screenName);
         }
-    }
+    };
     $scope.detail = function (nagId) {
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
         $state.go('tab.nag-detail', { nagId: nagId });
-    }
+    };
 
     $scope.isShowNag = function (dateString) {
         return new Date(dateString) < new Date();
-    }
+    };
 
     $scope.isShowCaughtUp = function () {
         return new Date($scope.nagger.nags[0].date) > new Date();
-    }
+    };
 
     $scope.chooseNagger = function () {
         $state.go('tab.naggers');
@@ -69,13 +69,13 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
             Nags.completeNagger(screenName);
         }
         $state.go('tab.nags');
-    }
+    };
     $scope.goBack = function () {
         $ionicHistory.nextViewOptions({
             disableBack: true
         });
         $state.go('tab.nags');
-    }
+    };
 
     $scope.playerVars = {
         rel: 0,
