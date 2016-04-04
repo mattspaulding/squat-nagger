@@ -9,16 +9,28 @@
   </author>
   <content src="index.html"/>
   <access origin="*"/>
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>
-  <preference name="android-minSdkVersion" value="16"/>
-  <preference name="BackupWebStorage" value="none"/>
-  <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="android-build-tool" value="gradle" />
+  <preference name="orientation" value="portrait" />
+  <preference name="webviewbounce" value="false" />
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="android-minSdkVersion" value="16" />
+  <preference name="BackupWebStorage" value="none" />
+  <preference name="KeepRunning" value="True" />
+  <preference name="ShowTitle" value="True" />
+  <preference name="InAppBrowserStorageEnabled" value="True" />
+  <preference name="SuppressesIncrementalRendering" value="True" />
+  <preference name="Orientation" value="portrait" />
+  <preference name="SplashScreen" value="screen" />
+  <preference name="SplashScreenDelay" value="3000" />
+  <preference name="AllowInlineMediaPlayback" value="true" />
   <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+    <param name="ios-package" value="CDVStatusBar" onload="true" />
   </feature>
+  <plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.4" src="https://github.com/katzer/cordova-plugin-local-notifications" />
+  <plugin name="cordova-plugin-app-event" version="1.1.0" />
+  <plugin name="cordova-plugin-device" version="1.1.1" />
+
   <platform name="ios">
     <icon src="resources/ios/icon/icon.png" width="57" height="57"/>
     <icon src="resources/ios/icon/icon@2x.png" width="114" height="114"/>
