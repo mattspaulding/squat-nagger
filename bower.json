@@ -6,6 +6,6 @@
     "ionic-platform-web-client": "^0.7.1"
   },
   "dependencies": {
-    "ngCordova": "^0.1.26-alpha"
+    "ngCordova": "^0.1.24-alpha"
   }
 }

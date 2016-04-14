@@ -1,7 +1,7 @@
 {
   "name": "squat-nagger",
-  "version": "1.1.1",
-  "description": "squat-nagger: An Ionic project",
+  "version": "0.0.5",
+  "description": "Get your butt in shape!!",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -23,11 +23,11 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios",
+    "android",
     {
       "platform": "ios",
-      "version": "",
-      "locator": "ios"
+      "version": "3.8",
+      "locator": "ios@3.8"
     }
   ]
 }
