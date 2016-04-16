@@ -1,0 +1,12 @@
+Android:
+
+Navigate to platforms/android/build/outputs/apk
+
+Build a new release
+ionic build --release android
+
+Sign it
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore squat_nagger.keystore android-release-unsigned.apk squatnagger
+
+Zip it
+~/Library/Android/sdk/build-tools/23.0.3/zipalign -v 4 android-release-unsigned.apk squatnagger.apk
