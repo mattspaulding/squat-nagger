@@ -1,6 +1,7 @@
 angular.module('starter.controllers', ["ionic", "ngCordova"])
 
-.controller('DashCtrl', function ($scope, Nags, $state) {
+
+.controller('DashCtrl', function ($scope, Nags, $state,$ionicPlatform) {
     $scope.nagger = Nags.getCurrentNagger();
     if ($scope.nagger != null) {
         $scope.endingDate = new Date($scope.nagger.nags[$scope.nagger.nags.length - 2].date);
@@ -10,11 +11,20 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $state.go('tab.naggers');
     };
 
-    $scope.playerVars = {
-        rel: 0,
-        showinfo: 0,
-        modestbranding: 0,
+  $scope.custom = {
+    player: null,
+    vars: {
+      rel: 0,
+      showinfo: 0
     }
+  };
+  $ionicPlatform.on('pause', function(event) {
+    var yts = document.getElementsByClassName('yt');
+    for (var i = 0; i < yts.length; ++i) {
+      yts[i].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    }
+  });
+
 })
 
 .controller('NagsCtrl', function ($scope, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
@@ -51,7 +61,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
     }
 })
 
-.controller('NagDetailCtrl', function ($scope, $stateParams, Nags, $ionicHistory, $state, $cordovaLocalNotification) {
+.controller('NagDetailCtrl', function ($scope, $stateParams, Nags, $ionicHistory,$ionicPlatform, $state, $cordovaLocalNotification) {
     $scope.nagger = Nags.getCurrentNagger();
     $scope.nag = Nags.get($stateParams.nagId);
     $scope.remove = function (nag) {
@@ -77,11 +87,19 @@ angular.module('starter.controllers', ["ionic", "ngCordova"])
         $state.go('tab.nags');
     };
 
-    $scope.playerVars = {
-        rel: 0,
-        showinfo: 0,
-        modestbranding: 0,
+  $scope.custom = {
+    player: null,
+    vars: {
+      rel: 0,
+      showinfo: 0
     }
+  };
+  $ionicPlatform.on('pause', function(event) {
+    var yts = document.getElementsByClassName('yt');
+    for (var i = 0; i < yts.length; ++i) {
+      yts[i].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*')
+    }
+  });
 
 })
 

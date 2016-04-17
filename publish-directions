@@ -1,6 +1,7 @@
 Android:
 
-Navigate to platforms/android/build/outputs/apk
+Navigate to the apk
+cd platforms/android/build/outputs/apk
 
 Build a new release
 ionic build --release android
@@ -10,3 +11,12 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore squat_nagger.ke
 
 Zip it
 ~/Library/Android/sdk/build-tools/23.0.3/zipalign -v 4 android-release-unsigned.apk squatnagger.apk
+
+
+IOS:
+
+Open in xCode
+double-click on platforms/ios/Squat Nagger.xcodeproj
+
+Submit it
+Product -> Archive
